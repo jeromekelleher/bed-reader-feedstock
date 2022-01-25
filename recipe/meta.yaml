@@ -6,14 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  # Can't use the standard pattern because of the hypen/underscore remapping.
+  # Can't use the standard pattern because of the hyphen/underscore remapping.
   url: https://pypi.io/packages/source/b/bed-reader/bed_reader-{{ version }}.tar.gz
   sha256: c02f5f5d0f95bb69b1fe9fae321e228713ac7b1e7e1ff4005b6b4122502a2a37
 
 build:
-  number: 0
-  # Disabling Windows builds 2022/01 because of obscure build system problems.01/2022
-  skip: true  # [py<37,win]
+  number: 1
+  skip: true  # [py<37]
 
 requirements:
   build:
