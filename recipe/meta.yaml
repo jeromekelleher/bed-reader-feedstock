@@ -1,5 +1,5 @@
 {% set name = "bed-reader" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,12 @@ package:
 source:
   # Can't use the standard pattern because of the hypen/underscore remapping.
   url: https://pypi.io/packages/source/b/bed-reader/bed_reader-{{ version }}.tar.gz
-  sha256: e35158c771d0254df49ec8128e0976341f075bc8563c3b33df7cd1d87ea5d2b1
+  sha256: c02f5f5d0f95bb69b1fe9fae321e228713ac7b1e7e1ff4005b6b4122502a2a37
 
 build:
-  number: 1
-  skip: true  # [py<37]
+  number: 0
+  # Disabling Windows builds 2022/01 because of obscure build system problems.01/2022
+  skip: true  # [py<37,win]
 
 requirements:
   build:
